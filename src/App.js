@@ -1,48 +1,59 @@
-import './App.css';
-import React, {useState} from 'react';
-import {marked} from 'marked'
+import {  useEffect, useState } from 'react'
+import './App.css'
+import {marked} from 'marked';
+import data from './docs.json';
 
-const App = () => {
-  const [code, setCode] = useState('## Hello')
-  const [compiled, setCompiled] = useState('<h2 id="hello">Hello</h2>')
-  const [hide, hidePreview] = useState(true)
 
-  const openMD = () => {
-    console.log(0)
-    hidePreview(true)
+function App() {
+  const [code,setCode]=useState('## Hello');
+  const [compiled,setCompiled]=useState('<h2 id="hello">Hello</h2>');
+  const [hide,setHide]=useState(true);
+  const [docSetup, setDocSetup]=useState(true);
+  const [docData,setDocData]=useState("");
+
+ 
+
+  const openMD=()=>{
+      setHide(true);
   }
 
-  const openPreview = () => {
-    console.log(0)
-    hidePreview(false)
+  const openPreview=()=>{
+    setDocSetup(true);
+     setHide(false);
   }
 
-  const handleChange = (e) => {
-    setCode(e.target.value)
-    setCompiled(marked.parse(e.target.value))
+  const openDocs=()=>{
+      setHide(false)
+      setDocSetup(false);   
+      setDocData(JSON.stringify(data,null,2));
+  }
+
+  const handleChange=(e)=>{
+    setCode(e.target.value);
+    setCompiled(marked.parse(e.target.value));
   }
 
   return (
     <>
-      <h1>MarkDown Previewer React App</h1>
-      <div className="container">
-        <div className="btns">
-          <button onClick={openMD} className="btn">MarkDown</button>
-          <button onClick={openPreview}>Preview</button>
-        </div>
-        {
-        hide ? 
-          <div>
-            <textarea onChange={handleChange} value={code}/>
-          </div> : 
-          <div>
-            <textarea value={compiled}/>
-          </div>
-        }
-      </div>
+
+      <h2>Markdown Previewer React App</h2>
+      <div className='container'>
+        <div className='btns'>
+       <button onClick={openMD}>Markdown</button>
+       <button onClick={openPreview}>Preview</button>
+       <button onClick={openDocs} >Docs</button>
+       </div>
+        {hide ?
+           <div>
+             <textarea onChange={handleChange} value={code}/>
+           </div>  :
+          docSetup ? 
+          <div><textarea value={compiled}/></div> :
+          <div> <textarea value={docData}/> </div>
+          }
+    </div>   
     </>
   )
 }
 
-
-export default App;
+export default App
