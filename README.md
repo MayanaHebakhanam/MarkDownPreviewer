@@ -1,11 +1,16 @@
 # markdown-previewer
 
-hello there, your task is to:
+Second task with Intern2Grow is to create a Markdown Previewer, add a new tab Docs to it and add markdown previewer documentation to it.
 
-- create a custom useLocalstorage hook and use it to store and retreive markdown content entered by user.
+Below Snippet shows the output screens of Markdown Previewer React App
 
-- add a new tab for "docs" like the one [here](https://ahmed0saber.github.io/markdown-previewer-with-oop/), you can use [this api](https://www.markdownguide.org/api/v1/)
+![Screenshot (349)](https://github.com/MayanaHebakhanam/MarkDownPreviewer/assets/76441726/27be6964-da48-4ddd-8f71-81a06fa7ab16)
 
-fork the repository and start working on it.
+![Screenshot (350)](https://github.com/MayanaHebakhanam/MarkDownPreviewer/assets/76441726/e764d4b4-33e2-421b-a948-df9d66b4356a)
 
-best of luck.
+![Screenshot (351)](https://github.com/MayanaHebakhanam/MarkDownPreviewer/assets/76441726/a38aedfd-2785-4596-8775-e32fe8c62b58)
+
+
+
+
+
