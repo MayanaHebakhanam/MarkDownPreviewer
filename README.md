@@ -1,6 +1,6 @@
 # markdown-previewer
 
-Second task with Intern2Grow is to create a Markdown Previewer, add a new tab Docs to it and add markdown previewer documentation to it.
+Second task with Intern2Grow is to create a Markdown Previewer by forking repository, add a new tab Docs to it and add markdown previewer documentation to it.
 
 Below are the Snippets of Markdown Previewer React App
 
